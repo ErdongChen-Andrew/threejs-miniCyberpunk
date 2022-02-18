@@ -122,36 +122,36 @@ gltfLoader.setDRACOLoader(dracoLoader)
 // Texture loader
 const textures = {};
 
-const teslaBodyTexture = textureLoader.load("bakedTeslaBody.jpg");
+const teslaBodyTexture = textureLoader.load("models/bakedTeslaBody.jpg");
 textures.teslaBodyTexture = teslaBodyTexture;
 
-const teslaPartsTexture = textureLoader.load("bakedTeslaParts.jpg");
+const teslaPartsTexture = textureLoader.load("models/bakedTeslaParts.jpg");
 textures.teslaPartsTexture = teslaPartsTexture;
 
-const buildingTexture = textureLoader.load("bakedBuilding.jpg");
+const buildingTexture = textureLoader.load("models/bakedBuilding.jpg");
 textures.buildingTexture = buildingTexture;
 
-const tankSetTexture = textureLoader.load("bakedTanksSet.jpg");
+const tankSetTexture = textureLoader.load("models/bakedTanksSet.jpg");
 textures.tankSetTexture = tankSetTexture;
 
-const buildingPartsTexture = textureLoader.load("bakedBuildingParts.jpg");
+const buildingPartsTexture = textureLoader.load("models/bakedBuildingParts.jpg");
 textures.buildingPartsTexture = buildingPartsTexture;
 
 if (mediaQuery.matches) {
-  const wireframeTexture = textureLoader.load("bakedWireframe.jpg");
+  const wireframeTexture = textureLoader.load("models/bakedWireframe.jpg");
   textures.wireframeTexture = wireframeTexture;
 }
 
-const itemsTexture = textureLoader.load("bakedItems.jpg");
+const itemsTexture = textureLoader.load("models/bakedItems.jpg");
 textures.itemsTexture = itemsTexture;
 
 if (mediaQuery.matches) {
-  const linesTexture = textureLoader.load("bakedLines.jpg");
+  const linesTexture = textureLoader.load("models/bakedLines.jpg");
   textures.linesTexture = linesTexture;
 }
 
 if (mediaQuery.matches) {
-  const fenceTexture = textureLoader.load("bakedFence.jpg");
+  const fenceTexture = textureLoader.load("models/bakedFence.jpg");
   textures.fenceTexture = fenceTexture;
 }
 
@@ -259,7 +259,7 @@ gui
   .name("Truck Position X");
 
 // Tesla Body
-gltfLoader.load("models/liz77_teslaBody.glb", (gltf) => {
+gltfLoader.load("models/Liz77_teslaBody.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTeslaBody;
   });
@@ -273,7 +273,7 @@ gltfLoader.load("models/liz77_teslaBody.glb", (gltf) => {
 });
 
 // Tesla Parts
-gltfLoader.load("models/liz77_teslaParts.glb", (gltf) => {
+gltfLoader.load("models/Liz77_teslaParts.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTeslaParts;
   });
@@ -281,7 +281,7 @@ gltfLoader.load("models/liz77_teslaParts.glb", (gltf) => {
 });
 
 // Building
-gltfLoader.load("models/liz77-building.glb", (gltf) => {
+gltfLoader.load("models/Liz77-building.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedBuilding;
   });
@@ -289,7 +289,7 @@ gltfLoader.load("models/liz77-building.glb", (gltf) => {
 });
 
 // Tanks Set
-gltfLoader.load("models/liz77-tanksSet.glb", (gltf) => {
+gltfLoader.load("models/Liz77-tanksSet.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTanks;
   });
@@ -298,7 +298,7 @@ gltfLoader.load("models/liz77-tanksSet.glb", (gltf) => {
 
 // Building parts
 let popeller;
-gltfLoader.load("models/liz77-buildingParts.glb", (gltf) => {
+gltfLoader.load("models/Liz77-buildingParts.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedBuildingParts;
   });
@@ -308,7 +308,7 @@ gltfLoader.load("models/liz77-buildingParts.glb", (gltf) => {
 });
 
 // Wireframe
-gltfLoader.load("models/liz77_wireframe.glb", (gltf) => {
+gltfLoader.load("models/Liz77_wireframe.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedWireframe;
   });
@@ -316,7 +316,7 @@ gltfLoader.load("models/liz77_wireframe.glb", (gltf) => {
 });
 
 // Items
-gltfLoader.load("models/liz77_items.glb", (gltf) => {
+gltfLoader.load("models/Liz77_items.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedItems;
   });
@@ -324,7 +324,7 @@ gltfLoader.load("models/liz77_items.glb", (gltf) => {
 });
 
 // Lines
-gltfLoader.load("models/liz77_lines.glb", (gltf) => {
+gltfLoader.load("models/Liz77_lines.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedLines;
   });
@@ -332,7 +332,7 @@ gltfLoader.load("models/liz77_lines.glb", (gltf) => {
 });
 
 // Fence
-gltfLoader.load("models/liz77_fence.glb", (gltf) => {
+gltfLoader.load("models/Liz77_fence.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = fenceMaterial;
   });
@@ -340,7 +340,7 @@ gltfLoader.load("models/liz77_fence.glb", (gltf) => {
 });
 
 // Emissions
-gltfLoader.load("models/liz77-emissions.glb", (gltf) => {
+gltfLoader.load("models/Liz77-emissions.glb", (gltf) => {
   // white light
   gltf.scene.children.find((item) => item.name === "RoofLight").material =
     whiteLight;
