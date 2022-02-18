@@ -122,36 +122,36 @@ gltfLoader.setDRACOLoader(dracoLoader)
 // Texture loader
 const textures = {};
 
-const teslaBodyTexture = textureLoader.load("bakedTeslaBody.jpg");
+const teslaBodyTexture = textureLoader.load("AC/bakedTeslaBody.jpg");
 textures.teslaBodyTexture = teslaBodyTexture;
 
-const teslaPartsTexture = textureLoader.load("bakedTeslaParts.jpg");
+const teslaPartsTexture = textureLoader.load("AC/bakedTeslaParts.jpg");
 textures.teslaPartsTexture = teslaPartsTexture;
 
-const buildingTexture = textureLoader.load("bakedBuilding.jpg");
+const buildingTexture = textureLoader.load("AC/bakedBuilding.jpg");
 textures.buildingTexture = buildingTexture;
 
-const tankSetTexture = textureLoader.load("bakedTanksSet.jpg");
+const tankSetTexture = textureLoader.load("AC/bakedTanksSet.jpg");
 textures.tankSetTexture = tankSetTexture;
 
-const buildingPartsTexture = textureLoader.load("bakedBuildingParts.jpg");
+const buildingPartsTexture = textureLoader.load("AC/bakedBuildingParts.jpg");
 textures.buildingPartsTexture = buildingPartsTexture;
 
 if (mediaQuery.matches) {
-  const wireframeTexture = textureLoader.load("bakedWireframe.jpg");
+  const wireframeTexture = textureLoader.load("AC/bakedWireframe.jpg");
   textures.wireframeTexture = wireframeTexture;
 }
 
-const itemsTexture = textureLoader.load("bakedItems.jpg");
+const itemsTexture = textureLoader.load("AC/bakedItems.jpg");
 textures.itemsTexture = itemsTexture;
 
 if (mediaQuery.matches) {
-  const linesTexture = textureLoader.load("bakedLines.jpg");
+  const linesTexture = textureLoader.load("AC/bakedLines.jpg");
   textures.linesTexture = linesTexture;
 }
 
 if (mediaQuery.matches) {
-  const fenceTexture = textureLoader.load("bakedFence.jpg");
+  const fenceTexture = textureLoader.load("AC/bakedFence.jpg");
   textures.fenceTexture = fenceTexture;
 }
 
@@ -259,7 +259,7 @@ gui
   .name("Truck Position X");
 
 // Tesla Body
-gltfLoader.load("liz77_teslaBody.glb", (gltf) => {
+gltfLoader.load("AC/liz77_teslaBody.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTeslaBody;
   });
@@ -272,111 +272,111 @@ gltfLoader.load("liz77_teslaBody.glb", (gltf) => {
   carWindows.material = carWindowsMaterial;
 });
 
-// // Tesla Parts
-// gltfLoader.load("liz77_teslaParts.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedTeslaParts;
-//   });
-//   teslaGroup.add(gltf.scene);
-// });
+// Tesla Parts
+gltfLoader.load("AC/liz77_teslaParts.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedTeslaParts;
+  });
+  teslaGroup.add(gltf.scene);
+});
 
-// // Building
-// gltfLoader.load("liz77-building.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedBuilding;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Building
+gltfLoader.load("AC/liz77-building.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedBuilding;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Tanks Set
-// gltfLoader.load("liz77-tanksSet.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedTanks;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Tanks Set
+gltfLoader.load("AC/liz77-tanksSet.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedTanks;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Building parts
-// let popeller;
-// gltfLoader.load("./liz77-buildingParts.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedBuildingParts;
-//   });
-//   // Getting pump popeller for latter animation
-//   popeller = gltf.scene.children.find((item) => item.name === "Popeller");
-//   scene.add(gltf.scene);
-// });
+// Building parts
+let popeller;
+gltfLoader.load("AC/liz77-buildingParts.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedBuildingParts;
+  });
+  // Getting pump popeller for latter animation
+  popeller = gltf.scene.children.find((item) => item.name === "Popeller");
+  scene.add(gltf.scene);
+});
 
-// // Wireframe
-// gltfLoader.load("./liz77_wireframe.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedWireframe;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Wireframe
+gltfLoader.load("AC/liz77_wireframe.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedWireframe;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Items
-// gltfLoader.load("./liz77_items.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedItems;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Items
+gltfLoader.load("AC/liz77_items.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedItems;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Lines
-// gltfLoader.load("./liz77_lines.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = bakedLines;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Lines
+gltfLoader.load("AC/liz77_lines.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedLines;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Fence
-// gltfLoader.load("./liz77_fence.glb", (gltf) => {
-//   gltf.scene.traverse((child) => {
-//     child.material = fenceMaterial;
-//   });
-//   scene.add(gltf.scene);
-// });
+// Fence
+gltfLoader.load("AC/liz77_fence.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = fenceMaterial;
+  });
+  scene.add(gltf.scene);
+});
 
-// // Emissions
-// gltfLoader.load("./liz77-emissions.glb", (gltf) => {
-//   // white light
-//   gltf.scene.children.find((item) => item.name === "RoofLight").material =
-//     whiteLight;
-//   gltf.scene.children.find((item) => item.name === "RoofLight001").material =
-//     whiteLight;
-//   gltf.scene.children.find((item) => item.name === "SignLight").material =
-//     whiteLight;
-//   gltf.scene.children.find((item) => item.name === "SignLight001").material =
-//     whiteLight;
+// Emissions
+gltfLoader.load("AC/liz77-emissions.glb", (gltf) => {
+  // white light
+  gltf.scene.children.find((item) => item.name === "RoofLight").material =
+    whiteLight;
+  gltf.scene.children.find((item) => item.name === "RoofLight001").material =
+    whiteLight;
+  gltf.scene.children.find((item) => item.name === "SignLight").material =
+    whiteLight;
+  gltf.scene.children.find((item) => item.name === "SignLight001").material =
+    whiteLight;
 
-//   // purple light
-//   gltf.scene.children.find((item) => item.name === "PurpleText").material =
-//     purpleLight;
-//   gltf.scene.children.find((item) => item.name === "PumpLight").material =
-//     purpleLight;
-//   gltf.scene.children.find((item) => item.name === "PumpLight001").material =
-//     purpleLight;
+  // purple light
+  gltf.scene.children.find((item) => item.name === "PurpleText").material =
+    purpleLight;
+  gltf.scene.children.find((item) => item.name === "PumpLight").material =
+    purpleLight;
+  gltf.scene.children.find((item) => item.name === "PumpLight001").material =
+    purpleLight;
 
-//   // blue light
-//   gltf.scene.children.find((item) => item.name === "BlueText").material =
-//     logoLight;
-//   gltf.scene.children.find((item) => item.name === "PlatformLight").material =
-//     blueLight;
+  // blue light
+  gltf.scene.children.find((item) => item.name === "BlueText").material =
+    logoLight;
+  gltf.scene.children.find((item) => item.name === "PlatformLight").material =
+    blueLight;
 
-//   // window light
-//   gltf.scene.children.find((item) => item.name === "WindowLight").material =
-//     windowLight;
-//   gltf.scene.children.find((item) => item.name === "WindowLight001").material =
-//     windowLight;
+  // window light
+  gltf.scene.children.find((item) => item.name === "WindowLight").material =
+    windowLight;
+  gltf.scene.children.find((item) => item.name === "WindowLight001").material =
+    windowLight;
 
-//   // orange light
-//   gltf.scene.children.find((item) => item.name === "SignLight002").material =
-//     orangeLight;
+  // orange light
+  gltf.scene.children.find((item) => item.name === "SignLight002").material =
+    orangeLight;
 
-//   scene.add(gltf.scene);
-// });
+  scene.add(gltf.scene);
+});
 
 /**
  * Sizes
@@ -690,9 +690,9 @@ const tick = (popellerRotation) => {
   stats.begin();
 
   // Animate pump popeller
-  // if (popeller) {
-  //   popeller.rotation.y += 0.01;
-  // }
+  if (popeller) {
+    popeller.rotation.y += 0.01;
+  }
 
   // Animate Tesla
   teslaGroup.position.y = Math.sin(elapsedTime * 1.5) * 0.05;
