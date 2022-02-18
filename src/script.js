@@ -4,6 +4,7 @@ import Stats from "stats-js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import { Color, sRGBEncoding } from "three";
 import {
   BloomEffect,
