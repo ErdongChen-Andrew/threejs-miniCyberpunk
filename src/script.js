@@ -122,36 +122,36 @@ gltfLoader.setDRACOLoader(dracoLoader)
 // Texture loader
 const textures = {};
 
-const teslaBodyTexture = textureLoader.load("AC/bakedTeslaBody.jpg");
+const teslaBodyTexture = textureLoader.load("bakedTeslaBody.jpg");
 textures.teslaBodyTexture = teslaBodyTexture;
 
-const teslaPartsTexture = textureLoader.load("AC/bakedTeslaParts.jpg");
+const teslaPartsTexture = textureLoader.load("bakedTeslaParts.jpg");
 textures.teslaPartsTexture = teslaPartsTexture;
 
-const buildingTexture = textureLoader.load("AC/bakedBuilding.jpg");
+const buildingTexture = textureLoader.load("bakedBuilding.jpg");
 textures.buildingTexture = buildingTexture;
 
-const tankSetTexture = textureLoader.load("AC/bakedTanksSet.jpg");
+const tankSetTexture = textureLoader.load("bakedTanksSet.jpg");
 textures.tankSetTexture = tankSetTexture;
 
-const buildingPartsTexture = textureLoader.load("AC/bakedBuildingParts.jpg");
+const buildingPartsTexture = textureLoader.load("bakedBuildingParts.jpg");
 textures.buildingPartsTexture = buildingPartsTexture;
 
 if (mediaQuery.matches) {
-  const wireframeTexture = textureLoader.load("AC/bakedWireframe.jpg");
+  const wireframeTexture = textureLoader.load("bakedWireframe.jpg");
   textures.wireframeTexture = wireframeTexture;
 }
 
-const itemsTexture = textureLoader.load("AC/bakedItems.jpg");
+const itemsTexture = textureLoader.load("bakedItems.jpg");
 textures.itemsTexture = itemsTexture;
 
 if (mediaQuery.matches) {
-  const linesTexture = textureLoader.load("AC/bakedLines.jpg");
+  const linesTexture = textureLoader.load("bakedLines.jpg");
   textures.linesTexture = linesTexture;
 }
 
 if (mediaQuery.matches) {
-  const fenceTexture = textureLoader.load("AC/bakedFence.jpg");
+  const fenceTexture = textureLoader.load("bakedFence.jpg");
   textures.fenceTexture = fenceTexture;
 }
 
@@ -259,7 +259,7 @@ gui
   .name("Truck Position X");
 
 // Tesla Body
-gltfLoader.load("AC/liz77_teslaBody.glb", (gltf) => {
+gltfLoader.load("liz77_teslaBody.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTeslaBody;
   });
@@ -273,7 +273,7 @@ gltfLoader.load("AC/liz77_teslaBody.glb", (gltf) => {
 });
 
 // Tesla Parts
-gltfLoader.load("AC/liz77_teslaParts.glb", (gltf) => {
+gltfLoader.load("liz77_teslaParts.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTeslaParts;
   });
@@ -281,7 +281,7 @@ gltfLoader.load("AC/liz77_teslaParts.glb", (gltf) => {
 });
 
 // Building
-gltfLoader.load("AC/liz77-building.glb", (gltf) => {
+gltfLoader.load("liz77-building.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedBuilding;
   });
@@ -289,7 +289,7 @@ gltfLoader.load("AC/liz77-building.glb", (gltf) => {
 });
 
 // Tanks Set
-gltfLoader.load("AC/liz77-tanksSet.glb", (gltf) => {
+gltfLoader.load("liz77-tanksSet.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedTanks;
   });
@@ -298,7 +298,7 @@ gltfLoader.load("AC/liz77-tanksSet.glb", (gltf) => {
 
 // Building parts
 let popeller;
-gltfLoader.load("AC/liz77-buildingParts.glb", (gltf) => {
+gltfLoader.load("liz77-buildingParts.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedBuildingParts;
   });
@@ -308,7 +308,7 @@ gltfLoader.load("AC/liz77-buildingParts.glb", (gltf) => {
 });
 
 // Wireframe
-gltfLoader.load("AC/liz77_wireframe.glb", (gltf) => {
+gltfLoader.load("liz77_wireframe.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedWireframe;
   });
@@ -316,7 +316,7 @@ gltfLoader.load("AC/liz77_wireframe.glb", (gltf) => {
 });
 
 // Items
-gltfLoader.load("AC/liz77_items.glb", (gltf) => {
+gltfLoader.load("liz77_items.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedItems;
   });
@@ -324,7 +324,7 @@ gltfLoader.load("AC/liz77_items.glb", (gltf) => {
 });
 
 // Lines
-gltfLoader.load("AC/liz77_lines.glb", (gltf) => {
+gltfLoader.load("liz77_lines.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedLines;
   });
@@ -332,7 +332,7 @@ gltfLoader.load("AC/liz77_lines.glb", (gltf) => {
 });
 
 // Fence
-gltfLoader.load("AC/liz77_fence.glb", (gltf) => {
+gltfLoader.load("liz77_fence.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = fenceMaterial;
   });
@@ -340,7 +340,7 @@ gltfLoader.load("AC/liz77_fence.glb", (gltf) => {
 });
 
 // Emissions
-gltfLoader.load("AC/liz77-emissions.glb", (gltf) => {
+gltfLoader.load("liz77-emissions.glb", (gltf) => {
   // white light
   gltf.scene.children.find((item) => item.name === "RoofLight").material =
     whiteLight;
