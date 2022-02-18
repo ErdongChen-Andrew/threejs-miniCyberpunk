@@ -110,8 +110,13 @@ const loadingManager = new THREE.LoadingManager(
 // Texture loader
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
+// Draco loader
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath('draco/')
+
 // GLTF loader
 const gltfLoader = new GLTFLoader(loadingManager);
+gltfLoader.setDRACOLoader(dracoLoader)
 
 // Texture loader
 const textures = {};
@@ -292,7 +297,7 @@ gltfLoader.load("liz77-tanksSet.glb", (gltf) => {
 
 // Building parts
 let popeller;
-gltfLoader.load("liz77-buildingParts.glb", (gltf) => {
+gltfLoader.load("./liz77-buildingParts.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedBuildingParts;
   });
@@ -302,7 +307,7 @@ gltfLoader.load("liz77-buildingParts.glb", (gltf) => {
 });
 
 // Wireframe
-gltfLoader.load("liz77_wireframe.glb", (gltf) => {
+gltfLoader.load("./liz77_wireframe.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedWireframe;
   });
@@ -310,7 +315,7 @@ gltfLoader.load("liz77_wireframe.glb", (gltf) => {
 });
 
 // Items
-gltfLoader.load("liz77_items.glb", (gltf) => {
+gltfLoader.load("./liz77_items.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedItems;
   });
@@ -318,7 +323,7 @@ gltfLoader.load("liz77_items.glb", (gltf) => {
 });
 
 // Lines
-gltfLoader.load("liz77_lines.glb", (gltf) => {
+gltfLoader.load("./liz77_lines.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = bakedLines;
   });
@@ -326,7 +331,7 @@ gltfLoader.load("liz77_lines.glb", (gltf) => {
 });
 
 // Fence
-gltfLoader.load("liz77_fence.glb", (gltf) => {
+gltfLoader.load("./liz77_fence.glb", (gltf) => {
   gltf.scene.traverse((child) => {
     child.material = fenceMaterial;
   });
@@ -334,7 +339,7 @@ gltfLoader.load("liz77_fence.glb", (gltf) => {
 });
 
 // Emissions
-gltfLoader.load("liz77-emissions.glb", (gltf) => {
+gltfLoader.load("./liz77-emissions.glb", (gltf) => {
   // white light
   gltf.scene.children.find((item) => item.name === "RoofLight").material =
     whiteLight;
