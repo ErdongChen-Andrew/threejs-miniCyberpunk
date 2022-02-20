@@ -4,7 +4,7 @@ import Stats from "stats-js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { Color, sRGBEncoding } from "three";
 import {
   BloomEffect,
@@ -60,7 +60,10 @@ const loadingManager = new THREE.LoadingManager(
   // loading completed
   () => {
     // hide loading page after loaded
-    gsap.to(loader, { opacity: 0, duration: fadeOutDuration });
+    setTimeout(() => {
+      gsap.to(loader, { opacity: 0, duration: fadeOutDuration });
+    }, 700);
+
     setTimeout(() => {
       loader.style.display = "none";
       gui.show();
@@ -112,12 +115,12 @@ const loadingManager = new THREE.LoadingManager(
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
 // Draco loader
-const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('draco/')
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath("draco/");
 
 // GLTF loader
 const gltfLoader = new GLTFLoader(loadingManager);
-gltfLoader.setDRACOLoader(dracoLoader)
+gltfLoader.setDRACOLoader(dracoLoader);
 
 // Texture loader
 const textures = {};
@@ -134,7 +137,9 @@ textures.buildingTexture = buildingTexture;
 const tankSetTexture = textureLoader.load("models/bakedTanksSet.jpg");
 textures.tankSetTexture = tankSetTexture;
 
-const buildingPartsTexture = textureLoader.load("models/bakedBuildingParts.jpg");
+const buildingPartsTexture = textureLoader.load(
+  "models/bakedBuildingParts.jpg"
+);
 textures.buildingPartsTexture = buildingPartsTexture;
 
 if (mediaQuery.matches) {
