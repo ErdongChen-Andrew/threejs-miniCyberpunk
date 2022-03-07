@@ -76,11 +76,12 @@ circle {
   top: 0;
   left: 0;
   outline: none;
-  background: rgb(65, 92, 190);
+
+  background: #5f46c5;
   background: radial-gradient(
     circle,
-    rgba(65, 92, 190, 1) 0%,
-    rgba(34, 57, 135, 1) 40%,
-    rgba(1, 14, 57, 1) 100%
+    #5f46c5 0%,
+    #301d81 40%,
+    #090029 100%
   );
 }

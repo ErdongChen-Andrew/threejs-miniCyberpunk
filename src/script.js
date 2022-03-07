@@ -4,7 +4,6 @@ import Stats from "stats-js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { Color, sRGBEncoding } from "three";
 import {
   BloomEffect,
@@ -47,7 +46,7 @@ const fadeOutDuration = 1.5; //in seconds
 const scene = new THREE.Scene();
 
 // Light
-const pointLight = new THREE.PointLight(0x7ed7ff, 10);
+const pointLight = new THREE.PointLight(0xBDADFF, 10);
 pointLight.position.set(-7, 5, -7);
 
 scene.add(pointLight);
@@ -114,49 +113,44 @@ const loadingManager = new THREE.LoadingManager(
 // Texture loader
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
-// Draco loader
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath("draco/");
-
 // GLTF loader
 const gltfLoader = new GLTFLoader(loadingManager);
-gltfLoader.setDRACOLoader(dracoLoader);
 
 // Texture loader
 const textures = {};
 
-const teslaBodyTexture = textureLoader.load("models/bakedTeslaBody.jpg");
+const teslaBodyTexture = textureLoader.load("models/bakedTeslaBody(purple).jpg");
 textures.teslaBodyTexture = teslaBodyTexture;
 
-const teslaPartsTexture = textureLoader.load("models/bakedTeslaParts.jpg");
+const teslaPartsTexture = textureLoader.load("models/bakedTeslaParts(purple).jpg");
 textures.teslaPartsTexture = teslaPartsTexture;
 
-const buildingTexture = textureLoader.load("models/bakedBuilding.jpg");
+const buildingTexture = textureLoader.load("models/bakedBuilding(purple).jpg");
 textures.buildingTexture = buildingTexture;
 
-const tankSetTexture = textureLoader.load("models/bakedTanksSet.jpg");
+const tankSetTexture = textureLoader.load("models/bakedTanksSet(purple).jpg");
 textures.tankSetTexture = tankSetTexture;
 
 const buildingPartsTexture = textureLoader.load(
-  "models/bakedBuildingParts.jpg"
+  "models/bakedBuildingParts(purple).jpg"
 );
 textures.buildingPartsTexture = buildingPartsTexture;
 
 if (mediaQuery.matches) {
-  const wireframeTexture = textureLoader.load("models/bakedWireframe.jpg");
+  const wireframeTexture = textureLoader.load("models/bakedWireframe(purple).jpg");
   textures.wireframeTexture = wireframeTexture;
 }
 
-const itemsTexture = textureLoader.load("models/bakedItems.jpg");
+const itemsTexture = textureLoader.load("models/bakedItems(purple).jpg");
 textures.itemsTexture = itemsTexture;
 
 if (mediaQuery.matches) {
-  const linesTexture = textureLoader.load("models/bakedLines.jpg");
+  const linesTexture = textureLoader.load("models/bakedLines(purple).jpg");
   textures.linesTexture = linesTexture;
 }
 
 if (mediaQuery.matches) {
-  const fenceTexture = textureLoader.load("models/bakedFence.jpg");
+  const fenceTexture = textureLoader.load("models/bakedFence(purple).jpg");
   textures.fenceTexture = fenceTexture;
 }
 
