@@ -46,7 +46,7 @@ const fadeOutDuration = 1.5; //in seconds
 const scene = new THREE.Scene();
 
 // Light
-const pointLight = new THREE.PointLight(0xBDADFF, 10);
+const pointLight = new THREE.PointLight(0xbdadff, 10);
 pointLight.position.set(-7, 5, -7);
 
 scene.add(pointLight);
@@ -119,10 +119,14 @@ const gltfLoader = new GLTFLoader(loadingManager);
 // Texture loader
 const textures = {};
 
-const teslaBodyTexture = textureLoader.load("models/bakedTeslaBody(purple).jpg");
+const teslaBodyTexture = textureLoader.load(
+  "models/bakedTeslaBody(purple).jpg"
+);
 textures.teslaBodyTexture = teslaBodyTexture;
 
-const teslaPartsTexture = textureLoader.load("models/bakedTeslaParts(purple).jpg");
+const teslaPartsTexture = textureLoader.load(
+  "models/bakedTeslaParts(purple).jpg"
+);
 textures.teslaPartsTexture = teslaPartsTexture;
 
 const buildingTexture = textureLoader.load("models/bakedBuilding(purple).jpg");
@@ -136,23 +140,19 @@ const buildingPartsTexture = textureLoader.load(
 );
 textures.buildingPartsTexture = buildingPartsTexture;
 
-if (mediaQuery.matches) {
-  const wireframeTexture = textureLoader.load("models/bakedWireframe(purple).jpg");
-  textures.wireframeTexture = wireframeTexture;
-}
+const wireframeTexture = textureLoader.load(
+  "models/bakedWireframe(purple2).jpg"
+);
+textures.wireframeTexture = wireframeTexture;
 
 const itemsTexture = textureLoader.load("models/bakedItems(purple).jpg");
 textures.itemsTexture = itemsTexture;
 
-if (mediaQuery.matches) {
-  const linesTexture = textureLoader.load("models/bakedLines(purple).jpg");
-  textures.linesTexture = linesTexture;
-}
+const linesTexture = textureLoader.load("models/bakedLines(purple).jpg");
+textures.linesTexture = linesTexture;
 
-if (mediaQuery.matches) {
-  const fenceTexture = textureLoader.load("models/bakedFence(purple).jpg");
-  textures.fenceTexture = fenceTexture;
-}
+const fenceTexture = textureLoader.load("models/bakedFence(purple2).jpg");
+textures.fenceTexture = fenceTexture;
 
 for (let texture in textures) {
   textures[texture].flipY = false;
@@ -193,17 +193,10 @@ const bakedBuildingParts = new THREE.MeshBasicMaterial({
 
 //Baked wireframe
 let bakedWireframe;
-if (mediaQuery.matches) {
-  bakedWireframe = new THREE.MeshBasicMaterial({
-    map: textures.wireframeTexture,
-    side: THREE.DoubleSide,
-  });
-} else {
-  bakedWireframe = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-    side: THREE.DoubleSide,
-  });
-}
+bakedWireframe = new THREE.MeshBasicMaterial({
+  map: textures.wireframeTexture,
+  side: THREE.DoubleSide,
+});
 
 //Baked items
 const bakedItems = new THREE.MeshBasicMaterial({
@@ -213,27 +206,49 @@ const bakedItems = new THREE.MeshBasicMaterial({
 
 //Baked lines
 let bakedLines;
-if (mediaQuery.matches) {
-  bakedLines = new THREE.MeshBasicMaterial({
-    map: textures.linesTexture,
-  });
-} else {
-  bakedLines = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-  });
-}
+bakedLines = new THREE.MeshBasicMaterial({
+  map: textures.linesTexture,
+});
 
 //Fence
 let fenceMaterial;
-if (mediaQuery.matches) {
-  fenceMaterial = new THREE.MeshBasicMaterial({
-    map: textures.fenceTexture,
-  });
-} else {
-  fenceMaterial = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-  });
-}
+fenceMaterial = new THREE.MeshBasicMaterial({
+  map: textures.fenceTexture,
+});
+
+/**
+ * Optional in case for better performance
+ */
+
+// if (mediaQuery.matches) {
+//   bakedWireframe = new THREE.MeshBasicMaterial({
+//     map: textures.wireframeTexture,
+//     side: THREE.DoubleSide,
+//   });
+// } else {
+//   bakedWireframe = new THREE.MeshBasicMaterial({
+//     color: 0x000000,
+//     side: THREE.DoubleSide,
+//   });
+// }
+// if (mediaQuery.matches) {
+//   bakedLines = new THREE.MeshBasicMaterial({
+//     map: textures.linesTexture,
+//   });
+// } else {
+//   bakedLines = new THREE.MeshBasicMaterial({
+//     color: 0x000000,
+//   });
+// }
+// if (mediaQuery.matches) {
+//   fenceMaterial = new THREE.MeshBasicMaterial({
+//     map: textures.fenceTexture,
+//   });
+// } else {
+//   fenceMaterial = new THREE.MeshBasicMaterial({
+//     color: 0x000000,
+//   });
+// }
 
 // Emission Materials
 const whiteLight = new THREE.MeshBasicMaterial({ color: 0xe7effd });
